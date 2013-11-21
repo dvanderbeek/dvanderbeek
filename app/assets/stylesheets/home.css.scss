@@ -8,10 +8,19 @@ body {
 #david {
   position: absolute; 
   bottom: 0px; 
-  height: 70%;
+  max-height: 70%;
+  max-width: 100%;
 }
 #welcome {
   padding-top: 20%;
+  h1 { 
+    font-size: 46px; 
+  }
+  .btn {
+    margin-top: 20px;
+    @include border-top-radius(30px);
+    @include border-bottom-radius(30px);
+  }
 }
 .center {
   text-align: center;
