@@ -43,9 +43,12 @@ html, body { height: 100%; }
       @include border-bottom-radius(20px);
       &:hover { background: #ccc; }
       &.active {
-        background: #D9534F;
-        border: 1px solid #AC2925;
+        background: $btn-danger-bg;
+        border: 1px solid $btn-danger-border;
         color: #ffffff;
+      }
+      &:active {
+        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
       }
     }
   }
