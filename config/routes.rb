@@ -2,6 +2,7 @@ Dvanderbeek2::Application.routes.draw do
   root to: 'home#index'
   get 'consulting', to: 'home#consulting', as: :consulting
   get 'entrepreneurship', to: 'home#entrepreneurship', as: :entrepreneurship
+  get 'resume', to: 'home#resume', as: :resume
   get 'contact', to: 'home#contact', as: :contact
 
   # The priority is based upon order of creation:
