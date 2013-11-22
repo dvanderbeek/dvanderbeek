@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body { height: 100%; }
-body {
-  background: #f1f1f1;
-}
 #david {
   position: absolute; 
   bottom: 0px; 
@@ -24,4 +21,39 @@ body {
 }
 .center {
   text-align: center;
+}
+
+.page-header {height: 300px; border-bottom: 1px solid #ccc; margin: 0; padding: 0; background: #f1f1f1;}
+
+.nav {
+  margin: 70px 0 0 0;
+  padding: 0;
+  li  {
+    float: left;
+    display: block;
+    margin-left: 10px;
+    a {
+      display: block;
+      padding: 10px 15px;
+      border: 1px solid #888;
+      color: #333;
+      @include border-top-radius(20px);
+      @include border-bottom-radius(20px);
+      &:hover { background: #ccc; }
+      &.active {
+        background: #D9534F;
+        border: 1px solid #AC2925;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.page {
+  padding-top: 70px;
+  h1 { 
+    color: #313334;
+    font-size: 70px;
+    line-height: 1;
+  }
 }

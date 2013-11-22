@@ -1,5 +1,8 @@
 Dvanderbeek2::Application.routes.draw do
-  root to: "home#index"
+  root to: 'home#index'
+  get 'consulting', to: 'home#consulting', as: :consulting
+  get 'entrepreneurship', to: 'home#entrepreneurship', as: :entrepreneurship
+  get 'contact', to: 'home#contact', as: :contact
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
