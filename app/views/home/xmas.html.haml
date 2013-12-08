@@ -7,24 +7,24 @@
 
 #photo-bg
   #tiles 
-    .tile{ data: { letter: "D" } }
-    .tile{ data: { letter: "I" } }
-    .tile{ data: { letter: "N" } }
-    .tile{ data: { letter: "N" } }
-    .tile{ data: { letter: "E" } }
-    .tile{ data: { letter: "R" } }
+    .tile.active.blank{ data: { letter: "D" } }
+    .tile.active.blank{ data: { letter: "I" } }
+    .tile.active.blank{ data: { letter: "N" } }
+    .tile.active.blank{ data: { letter: "N" } }
+    .tile.active.blank{ data: { letter: "E" } }
+    .tile.active.blank{ data: { letter: "R" } }
 
     .tile
     
-    .tile{ data: { letter: "A" } }
-    .tile{ data: { letter: "T" } }
+    .tile.active.blank{ data: { letter: "A" } }
+    .tile.active.blank{ data: { letter: "T" } }
 
-    .tile{ data: { letter: "A" } }
-    .tile{ data: { letter: "L" } }
-    .tile{ data: { letter: "I" } }
-    .tile{ data: { letter: "N" } }
-    .tile{ data: { letter: "E" } }
-    .tile{ data: { letter: "A" } }
+    .tile.active.blank{ data: { letter: "A" } }
+    .tile.active.blank{ data: { letter: "L" } }
+    .tile.active.blank{ data: { letter: "I" } }
+    .tile.active.blank{ data: { letter: "N" } }
+    .tile.active.blank{ data: { letter: "E" } }
+    .tile.active.blank{ data: { letter: "A" } }
 
   #pat-sajak
 
@@ -44,7 +44,7 @@
           %h4#myModalLabel.modal-title Solve the Puzzle!
         .modal-body
           .form-group
-            = text_field_tag :guess, "", placeholder: "Solve the Puzzle", id: "solve-guess", class: "form-control"
+            = text_field_tag :guess, "", placeholder: "Solve the Puzzle", id: "solve-guess", class: "form-control", autofocus: true
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
           = submit_tag "Solve", class: "btn btn-primary", id: "solve-button"  
