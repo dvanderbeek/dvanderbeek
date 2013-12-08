@@ -1,0 +1,51 @@
+/ %P Your actual present won't be here in time.
+/ %p To learn what it is, just go online.
+/ %p http://dvanderbeek.herokuapp.com/merry-christmas-katie
+/ %nav.navbar.navbar-default.navbar-static-top
+/   .container
+/     = link_to "Merry Christmas Katie!", "#", class: "navbar-brand"
+
+#photo-bg
+  #tiles 
+    .tile{ data: { letter: "D" } }
+    .tile{ data: { letter: "I" } }
+    .tile{ data: { letter: "N" } }
+    .tile{ data: { letter: "N" } }
+    .tile{ data: { letter: "E" } }
+    .tile{ data: { letter: "R" } }
+
+    .tile
+    
+    .tile{ data: { letter: "A" } }
+    .tile{ data: { letter: "T" } }
+
+    .tile{ data: { letter: "A" } }
+    .tile{ data: { letter: "L" } }
+    .tile{ data: { letter: "I" } }
+    .tile{ data: { letter: "N" } }
+    .tile{ data: { letter: "E" } }
+    .tile{ data: { letter: "A" } }
+
+  #pat-sajak
+
+  %button.btn.btn-warning.btn-lg#solve-trigger{"data-target" => "#solve", "data-toggle" => "modal"} Solve
+
+.container
+  #letters
+    - ("A".."Z").each do |letter|
+      .letter.available= letter
+
+#solve.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    = form_tag "solve", id: "solve-form" do
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#myModalLabel.modal-title Solve the Puzzle!
+        .modal-body
+          .form-group
+            = text_field_tag :guess, "", placeholder: "Solve the Puzzle", id: "solve-guess", class: "form-control"
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+          = submit_tag "Solve", class: "btn btn-primary", id: "solve-button"  
+

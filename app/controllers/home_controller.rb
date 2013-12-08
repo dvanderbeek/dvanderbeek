@@ -13,4 +13,7 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def xmas
+  end
 end

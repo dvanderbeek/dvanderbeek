@@ -4,6 +4,7 @@ Dvanderbeek2::Application.routes.draw do
   get 'entrepreneurship', to: 'home#entrepreneurship', as: :entrepreneurship
   get 'resume', to: 'home#resume', as: :resume
   get 'contact', to: 'home#contact', as: :contact
+  get 'merry-christmas-katie', to: 'home#xmas', as: :xmas
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

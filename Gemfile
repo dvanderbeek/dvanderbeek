@@ -21,6 +21,7 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.0.2.0'
+gem 'haml'
 
 group :development do
   gem 'powder'
