@@ -3,10 +3,12 @@ $ ->
     letter = $(this).text()
     $(this).removeClass("available").addClass("selected")
     n = 0
-    $(".tile").each ->
-      if $(this).data("letter") == letter
-        n += 1
-        $(this).text($(this).data("letter")).removeClass("blank")
+    $('*[data-letter='+letter+']').each (k, v) ->
+      el = this
+      n += 1
+      setTimeout (->
+        $(el).text(letter).removeClass("blank")
+      ), k * 500
     if n == 0
       $("#pat-sajak").hide().clearQueue() 
       $("#pat-sajak").removeClass("success").addClass("failure").text("Sorry, there are no " + letter + "'s").fadeIn(100).delay(3000).fadeOut(100)
