@@ -41,3 +41,9 @@ $ ->
 
   $("#solve").on "shown.bs.modal", (e) ->
     $("#solve-guess").trigger("focus")
+
+  $('body').on "keypress", (e) ->
+    code = e.keyCode || e.which
+    $(".letter.available").each ->
+      if $(this).text().toLowerCase() == String.fromCharCode(code).toLowerCase()
+        $(this).click()
