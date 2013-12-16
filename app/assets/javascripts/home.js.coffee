@@ -1,11 +1,13 @@
 $ ->
+  keyboardEnabled = true
+
   $("body").on "click", ".letter.available", ->
     letter = $(this).text()
+    tiles = $('*[data-letter='+letter+']')
     $(this).removeClass("available").addClass("selected")
-    n = 0
-    $('*[data-letter='+letter+']').each (k, v) ->
+    n = tiles.size()
+    tiles.each (k, v) ->
       el = this
-      n += 1
       setTimeout (->
         $(el).text(letter).removeClass("blank")
       ), k * 500
@@ -40,10 +42,15 @@ $ ->
       $("#pat-sajak").removeClass("success").addClass("failure").text("Sorry, not quite.  Keep trying!").fadeIn(100).delay(3000).fadeOut(100)
 
   $("#solve").on "shown.bs.modal", (e) ->
+    keyboardEnabled = false
     $("#solve-guess").trigger("focus")
 
+  $("#solve").on "hidden.bs.modal", (e) ->
+    keyboardEnabled = true
+
   $('body').on "keypress", (e) ->
-    code = e.keyCode || e.which
-    $(".letter.available").each ->
-      if $(this).text().toLowerCase() == String.fromCharCode(code).toLowerCase()
-        $(this).click()
+    if keyboardEnabled 
+      code = e.keyCode || e.which
+      $(".letter.available").each ->
+        if $(this).text().toLowerCase() == String.fromCharCode(code).toLowerCase()
+          $(this).click()
