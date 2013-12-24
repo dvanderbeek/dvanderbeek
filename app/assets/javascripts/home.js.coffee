@@ -27,7 +27,7 @@ $ ->
     if guess == "DINNER AT ALINEA"
       $("#solve").modal('hide')
       $("#pat-sajak").hide().clearQueue() 
-      $("#pat-sajak").removeClass("failure").addClass("success").text("CONGRATULATIONS, YOU FIGURED OUT YOUR GIFT!!!!").fadeIn(100)
+      $("#pat-sajak").removeClass("failure").addClass("success").text("Yes!!!! I'm taking you to an amazing dinner at Alinea. Merry Christmas, I love you!").fadeIn(100)
       $("#solve-trigger").hide()
       $("#letters").hide()
       $('body').find(".tile.active.blank").each (k, v) ->
